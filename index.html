@@ -1,1 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InstaGain 🎈 Download</title>
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/aminabedi68/Estedad@v10.0.0/dist/font-face.css" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { height:100%; }
 
+  body {
+    font-family: 'Estedad', 'Vazirmatn', -apple-system, BlinkMacSystemFont, sans-serif;
+    background:#0f1a0d;
+    color:#ffffff;
+    min-height:100dvh;
+    overflow-x:hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero-visual {
+    position: relative;
+    width:100%;
+    height: 46vh;
+    min-height: 320px;
+    overflow:hidden;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .hero-visual::before {
+    content:'';
+    position:absolute; inset:0;
+    background:
+      radial-gradient(circle at 28% 18%, rgba(174,234,0,0.28), transparent 55%),
+      radial-gradient(circle at 78% 72%, rgba(0,230,118,0.30), transparent 55%),
+      radial-gradient(circle at 50% 100%, rgba(255,105,180,0.22), transparent 60%),
+      radial-gradient(circle at 15% 85%, rgba(255,215,0,0.18), transparent 55%),
+      linear-gradient(180deg, #0f1a0d 0%, #1a2b17 100%);
+  }
+  .hero-visual::after {
+    content:'';
+    position:absolute; inset:0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+    pointer-events:none;
+  }
+
+  .hero-icon {
+    position: relative;
+    z-index:2;
+    width: 140px; height: 140px;
+    border-radius: 34px;
+    display: block;
+    object-fit: cover;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow:
+      0 30px 60px -20px rgba(0,0,0,0.7),
+      0 0 80px -20px rgba(174,234,0,0.55),
+      0 0 100px -30px rgba(255,105,180,0.45),
+      inset 0 2px 4px rgba(255,255,255,0.25);
+    animation: float 4s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .content {
+    position: relative;
+    z-index: 3;
+    max-width: 460px;
+    margin: -40px auto 0;
+    padding: 0 20px;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 28px;
+    padding: 32px 24px 26px;
+    box-shadow: 0 30px 80px -30px rgba(0,0,0,0.8);
+    text-align:center;
+    animation: rise 0.8s cubic-bezier(.2,.7,.2,1) both;
+  }
+  @keyframes rise {
+    from { opacity:0; transform: translateY(24px); }
+    to   { opacity:1; transform: translateY(0); }
+  }
+
+  .badge {
+    display: inline-flex; align-items:center; gap:6px;
+    background: rgba(174,234,0,0.12);
+    border: 1px solid rgba(174,234,0,0.35);
+    color:#d6f58a;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.4px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+  .badge .live {
+    width: 6px; height: 6px; border-radius: 50%;
+    background:#aeea00;
+    box-shadow: 0 0 0 3px rgba(174,234,0,0.25);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  h1 {
+    font-family: 'Estedad', sans-serif;
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    background: linear-gradient(180deg, #ffffff 0%, #d6f58a 55%, #ff9ec9 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .tagline {
+    font-size: 14px;
+    color:#9ca3af;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .stats-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 16px 0;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    margin-bottom: 22px;
+  }
+  .stat-mini { text-align:center; }
+  .stat-mini .val {
+    font-size: 16px; font-weight: 800;
+    color:#fff;
+    letter-spacing: -0.3px;
+    margin-bottom: 3px;
+    display: block;
+  }
+  .stat-mini .lbl {
+    font-size: 10px; color:#6b7280;
+    font-weight: 600; letter-spacing: 0.3px;
+  }
+  .stat-mini .stars {
+    display: flex; justify-content:center; gap:1px;
+    font-size: 12px;
+    direction: ltr;
+    color:#3f3f46;
+    margin-bottom: 3px;
+  }
+  .stat-mini .stars .on { color:#fbbf24; }
+
+  .sec-line {
+    display:flex; align-items:center; gap:9px;
+    padding: 12px 14px;
+    background: rgba(16,185,129,0.06);
+    border: 1px solid rgba(16,185,129,0.2);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    text-align:left;
+  }
+  .sec-line .check-ic {
+    flex-shrink:0;
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: rgba(16,185,129,0.15);
+    border: 1px solid rgba(16,185,129,0.4);
+    display:flex; align-items:center; justify-content:center;
+    color: #6ee7b7;
+    font-size: 12px; font-weight: 900;
+  }
+  .sec-line p {
+    font-size: 11.5px;
+    color:#86efac;
+    line-height: 1.55;
+    font-weight: 500;
+  }
+  .sec-line b { color:#6ee7b7; font-weight: 800; }
+
+  .btn-inline {
+    display:flex; align-items:center; justify-content:center; gap:9px;
+    width: 100%;
+    padding: 15px 18px;
+    background: linear-gradient(135deg, #aeea00 0%, #00e676 45%, #ff4fa3 100%);
+    color:#0f1a0d;
+    text-decoration:none;
+    border-radius: 14px;
+    font-size: 15px; font-weight: 800;
+    letter-spacing: 0.2px;
+    box-shadow:
+      0 14px 30px -8px rgba(174,234,0,0.5),
+      0 10px 24px -10px rgba(255,79,163,0.4),
+      inset 0 1px 0 rgba(255,255,255,0.3);
+    transition: transform 0.18s;
+  }
+  .btn-inline:active { transform: scale(0.98); }
+  .btn-inline svg { width:17px; height:17px; }
+
+  .version {
+    margin-top: 12px;
+    font-size: 11px; color:#6b7280;
+    font-weight: 600;
+  }
+  .version b { color:#d6f58a; font-weight: 800; }
+
+  .footer {
+    text-align: center;
+    margin-top: 22px;
+    padding: 16px 0 10px;
+    font-size: 11px;
+    color:#4b5563;
+    font-weight: 600;
+  }
+  .footer .ver-badge {
+    display: inline-flex; align-items: center; gap:6px;
+    color: #d6f58a;
+  }
+  .footer .ver-badge .v-ck {
+    width: 13px; height: 13px; border-radius: 50%;
+    background: #aeea00;
+    color:#0f1a0d; font-size: 8px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  @media (max-height: 720px) {
+    .hero-visual { height: 38vh; min-height: 240px; }
+    .hero-icon { width: 112px; height: 112px; border-radius: 28px; }
+    .card { padding: 26px 20px 22px; }
+    h1 { font-size: 36px; }
+    .tagline { font-size: 13px; margin-bottom: 18px; }
+    .stats-row { padding: 13px 0; margin-bottom: 18px; }
+    .sec-line { padding: 10px 12px; margin-bottom: 16px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="hero-visual">
+    <img src="icon.png" alt="InstaGain" class="hero-icon" id="appIcon">
+  </div>
+
+  <div class="content">
+    <div class="card">
+
+      <div class="badge">
+        <span class="live"></span>
+        Up to date
+      </div>
+
+      <h1>InstaGain</h1>
+      <p class="tagline">Grow &amp; Gain — fast, safe, and ready to go</p>
+
+      <div class="stats-row">
+        <div class="stat-mini">
+          <div class="stars"><span class="on">★★★★</span>★</div>
+          <span class="lbl">Rating</span>
+        </div>
+        <div class="stat-mini">
+          <span class="val">Light</span>
+          <span class="lbl">Size</span>
+        </div>
+        <div class="stat-mini">
+          <span class="val">7.14.09</span>
+          <span class="lbl">Version</span>
+        </div>
+      </div>
+
+      <div class="sec-line">
+        <div class="check-ic">✓</div>
+        <p><b>Your privacy is protected.</b> This app does not access any part of your device.</p>
+      </div>
+
+      <a href="https://github.com/iran98ir/apk-InstaGain/releases/latest"
+         class="btn-inline" id="downloadBtn" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0f1a0d" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+        Download &amp; Install
+      </a>
+
+      <div class="version">Latest version: <b>7.14.09</b></div>
+
+    </div>
+
+    <div class="footer">
+      <div class="ver-badge">
+        <span class="v-ck">✓</span>
+        Verified by Rayan App
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // گرفتن لینک مستقیم APK از آخرین ریلیز
+    (function(){
+      var btn = document.getElementById('downloadBtn');
+      var repo = 'iran98ir/apk-InstaGain';
+      var fallback = 'https://github.com/' + repo + '/releases/latest';
+
+      fetch('https://api.github.com/repos/' + repo + '/releases/latest', {
+        headers: { 'Accept': 'application/vnd.github+json' }
+      })
+      .then(function(r){
+        if (!r.ok) throw new Error('API ' + r.status);
+        return r.json();
+      })
+      .then(function(data){
+        var assets = data.assets || [];
+        var apk = assets.find(function(a){ return /\.apk$/i.test(a.name); });
+        btn.href = apk ? apk.browser_download_url : fallback;
+      })
+      .catch(function(){
+        btn.href = fallback;
+      });
+
+      // اگر تصویر آیکون لود نشد، لوگوی SVG جایگزین شود
+      var img = document.getElementById('appIcon');
+      img.onerror = function(){
+        img.outerHTML = '<div class="hero-icon" style="background:#0f1a0d;display:flex;align-items:center;justify-content:center;padding:14px">' +
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">' +
+          '<defs><clipPath id="frameClip"><rect x="1" y="1" width="22" height="22" rx="5.5"/></clipPath></defs>' +
+          '<g clip-path="url(#frameClip)" transform="translate(12,12) scale(1.15) translate(-12,-12)">' +
+          '<path d="M3.2 4.5c-.55-.55-1.45-.55-2 0-.55.55-.55 1.45 0 2L3.2 8.5l2-2c.55-.55.55-1.45 0-2-.55-.55-1.45-.55-2 0z" fill="#FF69B4"/>' +
+          '<path d="M17.5 3.2c-.5-.5-1.3-.5-1.8 0-.5.5-.5 1.3 0 1.8L17.5 6.7l1.8-1.68c.5-.5.5-1.3 0-1.8-.5-.5-1.3-.5-1.8 0z" fill="#2ECC40"/>' +
+          '<path d="M11.2 6.5c-.42-.42-1.12-.42-1.55 0-.42.42-.42 1.12 0 1.55L11.2 9.5l1.55-1.45c.42-.42.42-1.12 0-1.55-.42-.42-1.12-.42-1.55 0z" fill="#FFD700"/>' +
+          '<path d="M6.8 11.8c-.45-.45-1.17-.45-1.62 0-.45.45-.45 1.17 0 1.62L6.8 15l1.62-1.58c.45-.45.45-1.17 0-1.62-.45-.45-1.17-.45-1.62 0z" fill="#000000"/>' +
+          '<path d="M15.2 10.4c-.5-.5-1.3-.5-1.8 0-.5.5-.5 1.3 0 1.8L15.2 13.9l1.8-1.68c.5-.5.5-1.3 0-1.8-.5-.5-1.3-.5-1.8 0z" fill="#4FC3F7"/>' +
+          '<path d="M19.4 13.6c-.42-.42-1.12-.42-1.55 0-.42.42-.42 1.12 0 1.55L19.4 16.6l1.55-1.45c.42-.42.42-1.12 0-1.55-.42-.42-1.12-.42-1.55 0z" fill="#8E44AD"/>' +
+          '<path d="M4.2 16.8c-.55-.55-1.45-.55-2 0-.55.55-.55 1.45 0 2L4.2 20.5l2-2c.55-.55.55-1.45 0-2-.55-.55-1.45-.55-2 0z" fill="#FF8C00"/>' +
+          '<path d="M10.5 15.2c-.42-.42-1.12-.42-1.55 0-.42.42-.42 1.12 0 1.55L10.5 18.2l1.55-1.45c.42-.42.42-1.12 0-1.55-.42-.42-1.12-.42-1.55 0z" fill="#FFFFFF" stroke="#000" stroke-width="0.35"/>' +
+          '<path d="M14.8 18.6c-.45-.45-1.17-.45-1.62 0-.45.45-.45 1.17 0 1.62L14.8 21.8l1.62-1.58c.45-.45.45-1.17 0-1.62-.45-.45-1.17-.45-1.62 0z" fill="#00CED1"/>' +
+          '<path d="M20.6 6.2c-.42-.42-1.12-.42-1.55 0-.42.42-.42 1.12 0 1.55L20.6 9.2l1.55-1.45c.42-.42.42-1.12 0-1.55-.42-.42-1.12-.42-1.55 0z" fill="#8B4513"/>' +
+          '<path d="M2.4 8.4c-.5-.5-1.3-.5-1.8 0-.5.5-.5 1.3 0 1.8L2.4 11.9l1.8-1.68c.5-.5.5-1.3 0-1.8-.5-.5-1.3-.5-1.8 0z" fill="#FF1493"/>' +
+          '<path d="M8.6 3.6c-.45-.45-1.17-.45-1.62 0-.45.45-.45 1.17 0 1.62L8.6 6.8l1.62-1.58c.45-.45.45-1.17 0-1.62-.45-.45-1.17-.45-1.62 0z" fill="#00C853"/>' +
+          '<path d="M13.2 12.8c-.42-.42-1.12-.42-1.55 0-.42.42-.42 1.12 0 1.55L13.2 15.8l1.55-1.45c.42-.42.42-1.12 0-1.55-.42-.42-1.12-.42-1.55 0z" fill="#FFEB3B"/>' +
+          '<path d="M5.4 6.4c-.4-.4-1.05-.4-1.45 0-.4.4-.4 1.05 0 1.45L5.4 9.1l1.45-1.3c.4-.4.4-1.05 0-1.45-.4-.4-1.05-.4-1.45 0z" fill="#111111"/>' +
+          '<path d="M17.8 16.2c-.5-.5-1.3-.5-1.8 0-.5.5-.5 1.3 0 1.8L17.8 19.7l1.8-1.68c.5-.5.5-1.3 0-1.8-.5-.5-1.3-.5-1.8 0z" fill="#29B6F6"/>' +
+          '<path d="M2.8 13.2c-.5-.5-1.3-.5-1.8 0-.5.5-.5 1.3 0 1.8L2.8 16.7l1.8-1.68c.5-.5.5-1.3 0-1.8-.5-.5-1.3-.5-1.8 0z" fill="#9C27B0"/>' +
+          '<path d="M11.6 20.8c-.42-.42-1.12-.42-1.55 0-.42.42-.42 1.12 0 1.55L11.6 23.8l1.55-1.45c.42-.42.42-1.12 0-1.55-.42-.42-1.12-.42-1.55 0z" fill="#FF9800"/>' +
+          '<path d="M8.2 8.4c-.42-.42-1.12-.42-1.55 0-.42.42-.42 1.12 0 1.55L8.2 11.4l1.55-1.45c.42-.42.42-1.12 0-1.55-.42-.42-1.12-.42-1.55 0z" fill="#FFFFFF" stroke="#000" stroke-width="0.35"/>' +
+          '<path d="M15.4 6.6c-.45-.45-1.17-.45-1.62 0-.45.45-.45 1.17 0 1.62L15.4 9.8l1.62-1.58c.45-.45.45-1.17 0-1.62-.45-.45-1.17-.45-1.62 0z" fill="#18FFFF"/>' +
+          '<path d="M6.2 18.4c-.45-.45-1.17-.45-1.62 0-.45.45-.45 1.17 0 1.62L6.2 21.6l1.62-1.58c.45-.45.45-1.17 0-1.62-.45-.45-1.17-.45-1.62 0z" fill="#795548"/>' +
+          '<path d="M13.8 2.8c-.42-.42-1.12-.42-1.55 0-.42.42-.42 1.12 0 1.55L13.8 5.8l1.55-1.45c.42-.42.42-1.12 0-1.55-.42-.42-1.12-.42-1.55 0z" fill="#F44336"/>' +
+          '<path d="M19.8 9.8c-.5-.5-1.3-.5-1.8 0-.5.5-.5 1.3 0 1.8L19.8 13.3l1.8-1.68c.5-.5.5-1.3 0-1.8-.5-.5-1.3-.5-1.8 0z" fill="#E91E63"/>' +
+          '<path d="M3.8 3.2c-.42-.42-1.12-.42-1.55 0-.42.42-.42 1.12 0 1.55L3.8 6.2l1.55-1.45c.42-.42.42-1.12 0-1.55-.42-.42-1.12-.42-1.55 0z" fill="#009688"/>' +
+          '<path d="M20.2 20.6c-.42-.42-1.12-.42-1.55 0-.42.42-.42 1.12 0 1.55L20.2 23.6l1.55-1.45c.42-.42.42-1.12 0-1.55-.42-.42-1.12-.42-1.55 0z" fill="#FFC107"/>' +
+          '<path d="M11.4 1.8c-.42-.42-1.12-.42-1.55 0-.42.42-.42 1.12 0 1.55L11.4 4.8l1.55-1.45c.42-.42.42-1.12 0-1.55-.42-.42-1.12-.42-1.55 0z" fill="#03A9F4"/>' +
+          '<path d="M7.6 14.8c-.45-.45-1.17-.45-1.62 0-.45.45-.45 1.17 0 1.62L7.6 18l1.62-1.58c.45-.45.45-1.17 0-1.62-.45-.45-1.17-.45-1.62 0z" fill="#673AB7"/>' +
+          '<path d="M16.2 12.4c-.42-.42-1.12-.42-1.55 0-.42.42-.42 1.12 0 1.55L16.2 15.4l1.55-1.45c.42-.42.42-1.12 0-1.55-.42-.42-1.12-.42-1.55 0z" fill="#FF5722"/>' +
+          '<path d="M18.6 2.4c-.42-.42-1.12-.42-1.55 0-.42.42-.42 1.12 0 1.55L18.6 5.4l1.55-1.45c.42-.42.42-1.12 0-1.55-.42-.42-1.12-.42-1.55 0z" fill="#CDDC39"/>' +
+          '<path d="M4.4 20.8c-.5-.5-1.3-.5-1.8 0-.5.5-.5 1.3 0 1.8L4.4 23.8l1.8-1.68c.5-.5.5-1.3 0-1.8-.5-.5-1.3-.5-1.8 0z" fill="#E040FB"/>' +
+          '<path d="M12.8 17.2c-.45-.45-1.17-.45-1.62 0-.45.45-.45 1.17 0 1.62L12.8 20.4l1.62-1.58c.45-.45.45-1.17 0-1.62-.45-.45-1.17-.45-1.62 0z" fill="#00BCD4"/>' +
+          '<path d="M9.4 11.2c-.42-.42-1.12-.42-1.55 0-.42.42-.42 1.12 0 1.55L9.4 14.2l1.55-1.45c.42-.42.42-1.12 0-1.55-.42-.42-1.12-.42-1.55 0z" fill="#FF4081"/>' +
+          '<path d="M17.2 8.2c-.5-.5-1.3-.5-1.8 0-.5.5-.5 1.3 0 1.8L17.2 11.7l1.8-1.68c.5-.5.5-1.3 0-1.8-.5-.5-1.3-.5-1.8 0z" fill="#8BC34A"/>' +
+          '<path d="M2.2 18.2c-.42-.42-1.12-.42-1.55 0-.42.42-.42 1.12 0 1.55L2.2 21.2l1.55-1.45c.42-.42.42-1.12 0-1.55-.42-.42-1.12-.42-1.55 0z" fill="#3F51B5"/>' +
+          '<path d="M14.6 14.8c-.42-.42-1.12-.42-1.55 0-.42.42-.42 1.12 0 1.55L14.6 17.8l1.55-1.45c.42-.42.42-1.12 0-1.55-.42-.42-1.12-.42-1.55 0z" fill="#FF6D00"/>' +
+          '<path d="M21.8 14.2c-.45-.45-1.17-.45-1.62 0-.45.45-.45 1.17 0 1.62L21.8 17.4l1.62-1.58c.45-.45.45-1.17 0-1.62-.45-.45-1.17-.45-1.62 0z" fill="#AD1457"/>' +
+          '<path d="M5.8 10.2c-.5-.5-1.3-.5-1.8 0-.5.5-.5 1.3 0 1.8L5.8 13.7l1.8-1.68c.5-.5.5-1.3 0-1.8-.5-.5-1.3-.5-1.8 0z" fill="#00E676"/>' +
+          '<path d="M10.2 8.6c-.42-.42-1.12-.42-1.55 0-.42.42-.42 1.12 0 1.55L10.2 11.6l1.55-1.45c.42-.42.42-1.12 0-1.55-.42-.42-1.12-.42-1.55 0z" fill="#FFAB00"/>' +
+          '<path d="M15.8 21.2c-.5-.5-1.3-.5-1.8 0-.5.5-.5 1.3 0 1.8L15.8 24.7l1.8-1.68c.5-.5.5-1.3 0-1.8-.5-.5-1.3-.5-1.8 0z" fill="#FFFFFF" stroke="#000" stroke-width="0.35"/>' +
+          '<path d="M8.8 19.4c-.42-.42-1.12-.42-1.55 0-.42.42-.42 1.12 0 1.55L8.8 22.4l1.55-1.45c.42-.42.42-1.12 0-1.55-.42-.42-1.12-.42-1.55 0z" fill="#1DE9B6"/>' +
+          '<path d="M19.2 4.6c-.42-.42-1.12-.42-1.55 0-.42.42-.42 1.12 0 1.55L19.2 7.6l1.55-1.45c.42-.42.42-1.12 0-1.55-.42-.42-1.12-.42-1.55 0z" fill="#D500F9"/>' +
+          '</g>' +
+          '<rect x="1" y="1" width="22" height="22" rx="5.5" fill="none" stroke="#AEEA00" stroke-width="1.6"/>' +
+          '<path d="M15.5 8.2 A5 5 0 1 0 16.8 13.2 L16.8 11.6 L12.8 11.6" fill="none" stroke="#000000" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>' +
+          '</svg>' +
+          '</div>';
+      };
+    })();
+  </script>
+</body>
+  </html>
